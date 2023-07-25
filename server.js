@@ -1,10 +1,15 @@
 require('dotenv').config();
 const express = require ('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const app = express()
+app.use(cors({
+    origin:["http://localhost:3004","http://localhost:3000","http://localhost:4000","http://localhost:5000"],
+    default: "http://localhost:3005"
+}))
 app.use(express.json())
 
-// const  PORT = process.env.PORT || 4000 // either on 4000 or any 
+
 const Student = require('./models/productModel')
 // app.listen(4000,()=> {
 //     console.log("Node is running on port 4000") ;
