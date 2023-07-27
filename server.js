@@ -3,10 +3,11 @@ const express = require ('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
-app.use(cors({
-    origin:["http://localhost:3004","http://localhost:3000","http://localhost:4000","http://localhost:5000"],
-    default: "http://localhost:3005"
-}))
+// app.use(cors({
+//     origin:["http://localhost:3004","http://localhost:3000","http://localhost:4000","http://localhost:5000"],
+//     default: "http://localhost:3005"
+// }))
+app.use(cors())
 app.use(express.json())
 
 
